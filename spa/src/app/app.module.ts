@@ -15,6 +15,8 @@ import { ProductosComponent } from './component/productos/productos.component';
 import { ConsultaProductosComponent } from './component/consulta-productos/consulta-productos.component';
 import { FaqComponent } from './component/faq/faq.component';
 import { ConsultarFaqComponent } from './component/consultar-faq/consultar-faq.component';
+import { ServiciosComponent } from './component/servicios/servicios.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ConsultarFaqComponent } from './component/consultar-faq/consultar-faq.c
     ProductosComponent,
     ConsultaProductosComponent,
     FaqComponent,
-    ConsultarFaqComponent
+    ConsultarFaqComponent,
+    ServiciosComponent
   ],
   imports: [
     BrowserModule,
