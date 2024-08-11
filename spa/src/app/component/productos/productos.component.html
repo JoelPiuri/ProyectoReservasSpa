@@ -1,1 +1,51 @@
-<p>productos works!</p>
+<section class="products">
+  <h2>Aceites Corporales</h2>
+  <div class="product-category">
+    <div class="product" *ngFor="let product of aceitesCorporales">
+      <img [src]="product.img" [alt]="product.name">
+      <h3>{{ product.name }}</h3>
+      <p [innerHTML]="product.description"></p>
+      <p class="price">{{ product.price }}</p>
+    </div>
+  </div>
+
+  <h2>Cremas Corporales</h2>
+  <div class="product-category">
+    <div class="product" *ngFor="let product of cremasCorporales">
+      <img [src]="product.img" [alt]="product.name">
+      <h3>{{ product.name }}</h3>
+      <p [innerHTML]="product.description"></p>
+      <p class="price">{{ product.price }}</p>
+    </div>
+  </div>
+
+  <h2>Exfoliantes Corporales</h2>
+  <div class="product-category">
+    <div class="product" *ngFor="let product of exfoliantesCorporales">
+      <img [src]="product.img" [alt]="product.name">
+      <h3>{{ product.name }}</h3>
+      <p [innerHTML]="product.description"></p>
+      <p class="price">{{ product.price }}</p>
+    </div>
+  </div>
+
+  <h2>Mascarillas</h2>
+  <div class="product-category">
+    <div class="product" *ngFor="let product of mascarillas">
+      <img [src]="product.img" [alt]="product.name">
+      <h3>{{ product.name }}</h3>
+      <p [innerHTML]="product.description"></p>
+      <p class="price">{{ product.price }}</p>
+    </div>
+  </div>
+
+  <h2>Tónicos</h2>
+  <div class="product-category">
+    <div class="product" *ngFor="let product of tonicos">
+      <img [src]="product.img" [alt]="product.name">
+      <h3>{{ product.name }}</h3>
+      <p [innerHTML]="product.description"></p>
+      <p class="price">{{ product.price }}</p>
+    </div>
+  </div>
+</section>
