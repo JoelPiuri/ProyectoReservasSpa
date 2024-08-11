@@ -17,7 +17,6 @@ import { FaqComponent } from './component/faq/faq.component';
 import { ConsultarFaqComponent } from './component/consultar-faq/consultar-faq.component';
 import { ServiciosComponent } from './component/servicios/servicios.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,

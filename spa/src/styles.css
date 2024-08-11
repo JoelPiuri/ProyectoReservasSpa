@@ -1,8 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  font-family: Arial, sans-serif;
+/* Estilos para el menú desplegable */
+#menu ul {
+  list-style-type: none;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background-color: #993366;
 }
 /* Estilos para el menú desplegable */
 #menu ul {

@@ -1,0 +1,45 @@
+/*Facial*/
+.facial-treatments {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    background-color: #cd97ca;
+}
+
+.treatment-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    overflow: hidden;
+    display: flex;
+    width: 600px;
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.treatment-card:hover {
+    transform: scale(1.05);
+}
+
+.treatment-card img {
+    width: 200px;
+    height: auto;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.treatment-info {
+    padding: 20px;
+}
+
+.treatment-info h3 {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.treatment-info p {
+    font-size: 14px;
+    margin: 0;
+}

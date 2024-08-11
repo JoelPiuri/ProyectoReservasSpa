@@ -1,1 +1,10 @@
-<p>tratamiento-facial works!</p>
+<section class="facial-treatments">
+    <div class="treatment-card" *ngFor="let treatment of treatments">
+      <img [src]="treatment.img" [alt]="treatment.title">
+      <div class="treatment-info">
+        <h3>{{ treatment.title }} --- {{ treatment.duration }} --- {{ treatment.price }}</h3>
+        <p>{{ treatment.description }}</p>
+      </div>
+    </div>
+  </section>
+  

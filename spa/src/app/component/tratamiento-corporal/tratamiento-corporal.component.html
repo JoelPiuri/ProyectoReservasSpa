@@ -1,1 +1,10 @@
-<p>tratamiento-corporal works!</p>
+<section class="massage-services">
+    <div class="massage-card" *ngFor="let massage of massages">
+      <img [src]="massage.img" [alt]="massage.title">
+      <div class="massage-info">
+        <h3>{{ massage.title }} --- {{ massage.duration }} --- {{ massage.price }}</h3>
+        <p>{{ massage.description }}</p>
+      </div>
+    </div>
+  </section>
+  
