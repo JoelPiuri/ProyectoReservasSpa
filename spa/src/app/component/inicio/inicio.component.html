@@ -1,1 +1,57 @@
-<p>inicio works!</p>
+<!--Inicio Contenido-->
+    <!--Nombre-->
+    <section class="hero">
+      <div class="hero-content">
+          <h1>Eclipse Spa</h1>
+          <p>Donde cada momento es un escape celestial hacia la tranquilidad absoluta, un santuario donde los susurros de la serenidad envuelven el alma y el tiempo se detiene para dar paso a la paz eterna.</p>
+      </div>
+  </section>
+  <section class="sanctuary-gallery">
+      <h2>Eclipse Spa: Donde cada momento ilumina tu ser</h2>
+      <p>En Eclipse Spa, creemos que el bienestar es un arte que se cultiva con cada detalle. Nuestro santuario es un refugio donde la luz de la relajación eclipsa el bullicio del día a día. Aquí, cada tratamiento es una oda a tu esencia, diseñado para armonizar tu cuerpo y espíritu.</p>
+  </section>
+  <!--Galeria-->
+  <section class="sanctuary-gallery">
+      <h2>El Santuario Eclipse</h2>
+      <div class="gallery">
+          <div class="gallery-item">
+              <img src="../../../assets/image/gal1.jpg" alt="Santuarios de Sueño">
+              <p>Santuarios de Sueño</p>
+          </div>
+          <div class="gallery-item">
+              <img src="../../../assets/image/gal2.jpg" alt="Armonía de Manos Expertas">
+              <p>Manos Expertas</p>
+          </div>
+          <div class="gallery-item">
+              <img src="../../../assets/image/gal3.jpg" alt="Esencias de Euforia">
+              <p>Esencias de Euforia</p>
+          </div>
+          <div class="gallery-item">
+              <img src="../../../assets/image/gal4.jpg" alt="Alquimia Aromática">
+              <p>Alquimia Aromática</p>
+          </div>
+      </div>
+  </section>
+  <!--Fin galeria-->
+  <!--Calendario-->
+  <section class="date-picker">
+      <h2>Agenta tu cita!</h2>
+      <h2>Selecciona la fecha de tu viaje hacia la paz interior</h2>
+      <form id="booking-form">
+          <label for="tranquility-date"></label>
+          <input type="date" id="tranquility-date" required>
+          <label for="tranquility-time"></label>
+          <input type="time" id="tranquility-time" required>
+          <button type="submit" id="availability-button">¿Estamos disponibles?</button>
+      </form>
+      <div id="availability-message">
+          <p>¡Sí, prepárate porque tendrás una cita con nosotros!</p>
+      </div>
+  </section>
+  <script>
+      document.getElementById('booking-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          document.getElementById('availability-message').style.display = 'block';
+      });
+  </script>
+  <!--Fin calendario-->

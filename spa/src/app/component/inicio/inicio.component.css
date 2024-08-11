@@ -1,0 +1,166 @@
+/*Contenido*/
+.hero {
+  position: relative;
+  background-image: url("../../../assets/image/spainicio.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 60vh; /* Ajusta la altura según tus necesidades */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Oscurece la imagen de fondo */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 48px; /* Ajusta el tamaño según tus necesidades */
+  margin: 0;
+  font-family: 'Times New Roman', serif; /* Puedes cambiar la fuente si lo deseas */
+}
+
+.hero p {
+  font-size: 20px; /* Ajusta el tamaño según tus necesidades */
+  margin-top: 10px;
+  max-width: 800px; /* Limita el ancho del texto para una mejor legibilidad */
+  font-family: 'Georgia', serif; /* Puedes cambiar la fuente si lo deseas */
+}
+/*Galeria*/
+.sanctuary-gallery {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9; /* Ajusta el color de fondo según tus necesidades */
+}
+
+.sanctuary-gallery h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', serif; /* Puedes cambiar la fuente si lo deseas */
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+  width: 300px; /* Ajusta el tamaño de la imagen según tus necesidades */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-item p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(94, 51, 90, 0.6);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+}
+/*Calendario*/
+.date-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+.date-picker h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: 'Times New Roman', serif;
+}
+
+.date-picker label {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.date-picker input[type="date"],
+.date-picker input[type="time"] {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+  text-align: center;
+}
+
+.date-picker input[type="date"]:focus,
+.date-picker input[type="time"]:focus {
+  border-color: #800080;
+  outline: none;
+}
+
+.availability-check {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+#availability-button {
+  background-color: #800080;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  display: inline-block;
+}
+
+#availability-button:hover {
+  background-color: #6a006a;
+}
+
+#availability-message {
+  display: none;
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 300px;
+}
