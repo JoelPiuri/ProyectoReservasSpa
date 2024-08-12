@@ -1,7 +1,7 @@
 /*Footer*/
 .footer {
   position: relative;
-  background-image: url('../../../assets/image/footer.jpg'); /* Ruta a tu imagen de fondo */
+  background-image: url('http://localhost:5000/images/footer.jpg'); /* Ruta a tu imagen de fondo */
   background-size: cover;
   background-position: center;
   padding: 50px 20px;

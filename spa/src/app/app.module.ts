@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,8 @@ import { ConsultaProductosComponent } from './component/consulta-productos/consu
 import { FaqComponent } from './component/faq/faq.component';
 import { ConsultarFaqComponent } from './component/consultar-faq/consultar-faq.component';
 import { ServiciosComponent } from './component/servicios/servicios.component';
+import { BuscarReservacionComponent } from './component/buscar-reservacion/buscar-reservacion.component';
+import { ReservacionComponent } from './component/reservacion/reservacion.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +37,16 @@ import { ServiciosComponent } from './component/servicios/servicios.component';
     ConsultaProductosComponent,
     FaqComponent,
     ConsultarFaqComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    BuscarReservacionComponent,
+    ReservacionComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

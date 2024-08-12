@@ -16,19 +16,19 @@
   <h2>El Santuario Eclipse</h2>
   <div class="gallery">
     <div class="gallery-item">
-      <img src="css/img/gal1.jpg" alt="Santuarios de Sueño">
+      <img src="http://localhost:5000/images/gal1.jpg" alt="Santuarios de Sueño">
       <p>Santuarios de Sueño</p>
     </div>
     <div class="gallery-item">
-      <img src="css/img/gal2.jpg" alt="Armonía de Manos Expertas">
+      <img src="http://localhost:5000/images/gal2.jpg" alt="Armonía de Manos Expertas">
       <p>Manos Expertas</p>
     </div>
     <div class="gallery-item">
-      <img src="css/img/gal3.jpg" alt="Esencias de Euforia">
+      <img src="http://localhost:5000/images/gal3.jpg" alt="Esencias de Euforia">
       <p>Esencias de Euforia</p>
     </div>
     <div class="gallery-item">
-      <img src="css/img/gal4.jpg" alt="Alquimia Aromática">
+      <img src="http://localhost:5000/images/gal4.jpg" alt="Alquimia Aromática">
       <p>Alquimia Aromática</p>
     </div>
   </div>
@@ -38,14 +38,12 @@
 <section class="date-picker">
   <h2>Agenda tu cita!</h2>
   <h2>Selecciona la fecha de tu viaje hacia la paz interior</h2>
-  <form id="booking-form">
-    <label for="tranquility-date"></label>
-    <input type="date" id="tranquility-date" required>
-    <label for="tranquility-time"></label>
-    <input type="time" id="tranquility-time" required>
-    <button type="submit" id="availability-button">¿Estamos disponibles?</button>
-  </form>
-  <div id="availability-message">
-    <p>¡Sí, prepárate porque tendrás una cita con nosotros!</p>
-  </div>
+
+  <!-- Incluir el componente de ver disponibilidad -->
+  <app-ver-disponibilidad></app-ver-disponibilidad>
+</section>
+
+<section class="busqueda">
+  
+  <app-buscar-reservacion></app-buscar-reservacion>
 </section>
