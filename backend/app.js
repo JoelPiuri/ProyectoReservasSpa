@@ -1,9 +1,11 @@
 const express = require('express');
+var bodyParser=require('body-parser');//
 const cors = require('cors');  // Importa el paquete cors
 const mongoose = require('mongoose');
 const reservationRoutes = require('./routes/spa.routes.js'); 
+var productRoutes = require('./routes/product.routes');
 
-const app = express();
+var app = express();//
 
 // Sirve los archivos estáticos desde la carpeta 'public'
 app.use(express.static('public'));
@@ -11,17 +13,19 @@ app.use(express.static('public'));
 // Habilita CORS para todas las solicitudes
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/Spa', {
-  // otras opciones de mongoose si es necesario
-})
-.then(() => console.log('Conectado a la base de datos Spa'))
-.catch(err => console.error('Error al conectar a la base de datos', err));
-
 app.use(express.json());
 
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.use((req,res,next)=>{
+    res.header('Access-Control-Allow-Origin','*');
+    res.header('Access-Control-Allow-Headers','Authorization, X-API-KEY, X-Request-With, Content-Type,Accept, Access-Control-Allow, Request-Method')
+    res.header('Access-Control-Allow-Methods','GET,POST,OPTIONS,PUT,DELETE');
+    res.header('Allow','GET, POST, OPTIONS, PUT, DELETE');
+    res.header("Access-Control-Allow-Credentials", true);
+    next();
+});
 // Usar rutas
 app.use('/api/reservations', reservationRoutes);
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.use('/', productRoutes);
+module.exports=app;
