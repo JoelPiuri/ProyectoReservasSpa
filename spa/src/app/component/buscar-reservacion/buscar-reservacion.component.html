@@ -27,10 +27,17 @@
     <input id="date" formControlName="date" type="date">
 
     <label for="time">Hora:</label>
-    <input id="time" formControlName="time" type="time">
+
+    <select id="time" formControlName="time">
+      <option value="" disabled selected>Selecciona una hora</option>
+      <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
+    </select>
 
     <label for="service">Servicio:</label>
-    <input id="service" formControlName="service">
+    <select id="service" formControlName="service">
+      <option value="" disabled selected>Selecciona un servicio</option>
+      <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+    </select>
 
     <label for="clientName">Cliente:</label>
     <input id="clientName" formControlName="clientName">
