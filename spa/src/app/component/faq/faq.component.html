@@ -1,3 +1,11 @@
+<!-- Banner Flotante -->
+<div class="floating-banner" *ngIf="isBannerVisible" (click)="onBannerClick()">
+  <span class="close-btn" (click)="closeBanner($event)">&times;</span>
+  <div class="floating-banner-content">
+    <h1>.</h1>
+  </div>
+</div>
+
 <section class="faq-section">
   <h1 class="faq-title">Preguntas Frecuentes</h1>
 

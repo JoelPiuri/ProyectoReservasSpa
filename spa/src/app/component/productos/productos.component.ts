@@ -30,6 +30,17 @@ export class ProductosComponent implements OnInit{
       this.tonicos = data.filter((product: any) => product.category === 'tonicos');
     });
   }
+  isBannerVisible: boolean = true;
+
+  closeBanner(event: Event): void {
+    event.stopPropagation(); // Evita que el clic en la "X" active el clic en el banner
+    this.isBannerVisible = false;
+  }
+
+  onBannerClick(): void {
+    const url = 'https://www.pedidosya.com/'; // Aquí define la URL a la que quieres redirigir
+    window.location.href = url;
+  }
 }
   // aceitesCorporales = [
   //   { img: 'css/img/p1.jpg', name: 'Aceite de Masaje Corporal Anti-stress', description: 'Uso Profesional<br>Aceite de Masaje Corporal<br>Facilita la eficacia del Masaje y Relajación', price: '$25.67' },
