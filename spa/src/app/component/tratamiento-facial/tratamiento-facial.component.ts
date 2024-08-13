@@ -1,12 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from '../../services/servicios.service';
-// interface Treatment {
-//   img: string;
-//   title: string;
-//   description: string;
-//   duration: string;
-//   price: string;
-// }
 
 @Component({
   selector: 'app-tratamiento-facial',
@@ -27,6 +20,17 @@ export class TratamientoFacialComponent implements OnInit {
       data => this.services = data,
       error => console.error('Error fetching facial services', error)
     );
+  }
+  isBannerVisible: boolean = true;
+
+  closeBanner(event: Event): void {
+    event.stopPropagation(); // Evita que el clic en la "X" active el clic en el banner
+    this.isBannerVisible = false;
+  }
+
+  onBannerClick(): void {
+    const url = 'https://www.wix.com/'; // Aquí define la URL a la que quieres redirigir
+    window.location.href = url;
   }
 }
 // export class TratamientoFacialComponent {
@@ -61,17 +65,7 @@ export class TratamientoFacialComponent implements OnInit {
     // }
   // ];
 
-//   isBannerVisible: boolean = true;
-
-//   closeBanner(event: Event): void {
-//     event.stopPropagation(); // Evita que el clic en la "X" active el clic en el banner
-//     this.isBannerVisible = false;
-//   }
-
-//   onBannerClick(): void {
-//     const url = 'https://www.wix.com/'; // Aquí define la URL a la que quieres redirigir
-//     window.location.href = url;
-//   }
+  
  
-// }
+//}
 
