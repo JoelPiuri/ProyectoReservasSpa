@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');  // Importa el paquete cors
 const mongoose = require('mongoose');
-const reservationRoutes = require('./routes/spa.routes.js'); 
+const reservationRoutes = require('./routes/spa.routes.js'); // Asegúrate de que esta ruta es correcta
+const faqRoutes = require('./routes/faq.routes.js');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.json());
 
 // Usar rutas
 app.use('/api/reservations', reservationRoutes);
+app.use('/api/faqs', faqRoutes);
 
 const PORT = process.env.PORT || 5000;
 

@@ -36,8 +36,8 @@ export class ReservacionComponent {
       console.log('Datos a enviar:', this.reservationForm.value);
       this.reservationService.crearReservacion(this.reservationForm.value).subscribe(
         response => {
-          const { turno, date, time, service, clientName } = response;
-          alert(`Gracias por reservar ${clientName}. Tu ${service} se realizará el ${date} a las ${time}. Tu turno es ${turno}.`);
+          const { turno, date, time, service, clientName, codigo } = response;
+          alert(`Gracias por reservar ${clientName}. Tu ${service} se realizará el ${date} a las ${time}. Tu turno es ${turno} y tu código es ${codigo}.`);
         },
         error => {
           console.error('Error al crear la reservación', error);

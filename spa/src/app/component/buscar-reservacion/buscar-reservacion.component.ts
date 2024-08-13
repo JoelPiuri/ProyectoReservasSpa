@@ -8,7 +8,7 @@ import { ReservationService } from '../../services/reservation.service';
   styleUrls: ['./buscar-reservacion.component.css']
 })
 export class BuscarReservacionComponent {
-  turnoBuscado: number | null = null;
+  codigoAsignado: string = '';
   reservacion: any = null; 
   errorMsg: string = ''; 
   mostrarFormulario = false;
@@ -25,15 +25,15 @@ export class BuscarReservacionComponent {
   }
 
   buscarReservacion() {
-    console.log('Turno buscado:', this.turnoBuscado); 
+    console.log('Código buscado:', this.codigoAsignado); // Depuración
   
     // Verificar que turnoBuscado esté definido y sea un número válido
-    if (this.turnoBuscado === null || this.turnoBuscado === undefined) {
-      this.errorMsg = 'Por favor, ingresa un turno válido';
+    if (!this.codigoAsignado || typeof this.codigoAsignado !== 'string') {
+      this.errorMsg = 'Por favor, ingresa un código válido';
       return;
     }
   
-    this.reservationService.buscarReservacion(this.turnoBuscado).subscribe(
+    this.reservationService.buscarReservacion(this.codigoAsignado).subscribe(
       data => {
         this.reservacion = data;
         this.errorMsg = '';
@@ -59,7 +59,7 @@ export class BuscarReservacionComponent {
   }
 
   onModificar() {
-    console.log('Turno buscado en modificar:', this.turnoBuscado); // Depurar turnoBuscado
+    console.log('Código buscado en modificar:', this.codigoAsignado); // Depurar turnoBuscado
     const formData = this.modificacionForm.value;
   
     // Verificar que los campos de fecha y hora no estén vacíos
@@ -68,12 +68,12 @@ export class BuscarReservacionComponent {
       return;
     }
 
-    if (this.turnoBuscado === null) {
-      alert('El turno buscado no es válido.');
+    if (this.codigoAsignado === null) {
+      alert('El codigo buscado no es válido.');
       return;
     }
   
-    this.reservationService.modificarReservacion(this.turnoBuscado.toString(), formData).subscribe(
+    this.reservationService.modificarReservacion(this.codigoAsignado, formData).subscribe(
       data => {
         alert('Reservación modificada exitosamente');
         this.reservacion = data;
@@ -88,8 +88,8 @@ export class BuscarReservacionComponent {
   
   eliminarReservacion() {
     if (confirm('¿Estás seguro de que deseas eliminar esta reservación?')) {
-      if (this.turnoBuscado !== null) {
-        this.reservationService.eliminarReservacion(this.turnoBuscado.toString()).subscribe(
+      if (this.codigoAsignado !== null) {
+        this.reservationService.eliminarReservacion(this.codigoAsignado.toString()).subscribe(
           () => {
             alert('Reservación eliminada exitosamente');
             this.reservacion = null;

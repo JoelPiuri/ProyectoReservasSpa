@@ -26,6 +26,11 @@ const ReservationSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  codigo: {  
+    type: String,
+    required: true,
+    unique: true
+  },
 });
 
 module.exports = mongoose.model('Reservas', ReservationSchema);

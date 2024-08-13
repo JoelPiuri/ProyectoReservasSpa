@@ -18,17 +18,19 @@ export class ReservationService {
     return this.http.post(`${this.apiUrl}/reserve`, reservationData);
   }
 
-  buscarReservacion(turno: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/buscar/${turno}`);
+  buscarReservacion(codigo: String): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/buscar/${codigo}`);
   }  
   
-  modificarReservacion(turno: string, reservacion: any) {
-    return this.http.put(`http://localhost:5000/api/reservations/modificar/${turno}`, reservacion);
-  }
-  
-  eliminarReservacion(turno: string) {
-    return this.http.delete(`http://localhost:5000/api/reservations/eliminar/${turno}`);
-  }
+ // Método para modificar una reservación existente
+ modificarReservacion(codigo: string, reservacion: any): Observable<any> {
+  return this.http.put(`${this.apiUrl}/modificar/${codigo}`, reservacion);
+}
+
+// Método para eliminar una reservación por código
+eliminarReservacion(codigo: string): Observable<any> {
+  return this.http.delete(`${this.apiUrl}/eliminar/${codigo}`);
+}
   
   
 }
