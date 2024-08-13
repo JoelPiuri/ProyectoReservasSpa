@@ -1,0 +1,110 @@
+.busqueda {
+    text-align: center;
+    margin: 0 auto 20px;
+    padding: 20px;
+    background-color: #f3e4f7;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  .busqueda h2 {
+    color: #4a154b;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .busqueda h1 {
+    color: #6b3677;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .busqueda-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .busqueda input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 60%;
+  }
+  
+  .busqueda button {
+    background-color: #6b3677;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .busqueda button:hover {
+    background-color: #4a154b;
+  }
+  
+  .reservation-details, .modification-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f3e4f7;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #ccc;
+  }
+  
+  .reservation-details h3, .modification-form h3 {
+    color: #4a154b;
+    margin-bottom: 15px;
+  }
+  
+  .reservation-details p, .modification-form label {
+    color: #6b3677;
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .reservation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .reservation-buttons button, .modification-form button[type="submit"] {
+    background-color: #6b3677;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .reservation-buttons button:hover, .modification-form button[type="submit"]:hover {
+    background-color: #4a154b;
+  }
+  
+  .modification-form input, .modification-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .error-msg {
+    color: #a0467d;
+    font-size: 18px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  

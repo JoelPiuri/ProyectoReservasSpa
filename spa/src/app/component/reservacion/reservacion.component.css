@@ -1,0 +1,41 @@
+.reservation-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .input-date,
+  .input-text,
+  .input-select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: auto;
+  }
+  
+  .input-date,
+  .input-text,
+  .input-select {
+    background-color: #d5a0d6; /* color lila claro */
+    color: #4a154b; /* color púrpura oscuro */
+  }
+  
+  .input-select option {
+    background-color: #bf64b7; /* color rojo vino */
+  }
+  
+  .submit-button {
+    background-color: #6b3677; /* color púrpura oscuro */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #4a154b; /* color púrpura más oscuro al hacer hover */
+  }
+  
