@@ -1,51 +1,128 @@
 <section class="products">
-  <h2>Aceites Corporales</h2>
-  <div class="product-category">
-    <div class="product" *ngFor="let product of aceitesCorporales">
-      <img [src]="product.img" [alt]="product.name">
-      <h3>{{ product.name }}</h3>
-      <p [innerHTML]="product.description"></p>
-      <p class="price">{{ product.price }}</p>
+  <div class="category-section" *ngIf="aceitesCorporales.length">
+    <h2>Aceites Corporales</h2>
+    <div class="product-category">
+      <div *ngFor="let product of aceitesCorporales" class="product">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <h3>{{product.name}}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{product.price | currency}}</p>
+      </div>
     </div>
   </div>
-
-  <h2>Cremas Corporales</h2>
-  <div class="product-category">
-    <div class="product" *ngFor="let product of cremasCorporales">
-      <img [src]="product.img" [alt]="product.name">
-      <h3>{{ product.name }}</h3>
-      <p [innerHTML]="product.description"></p>
-      <p class="price">{{ product.price }}</p>
+  
+  <div class="category-section" *ngIf="cremasCorporales.length">
+    <h2>Cremas Corporales</h2>
+    <div class="product-category">
+      <div *ngFor="let product of cremasCorporales" class="product">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <h3>{{product.name}}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{product.price | currency}}</p>
+      </div>
     </div>
   </div>
-
-  <h2>Exfoliantes Corporales</h2>
-  <div class="product-category">
-    <div class="product" *ngFor="let product of exfoliantesCorporales">
-      <img [src]="product.img" [alt]="product.name">
-      <h3>{{ product.name }}</h3>
-      <p [innerHTML]="product.description"></p>
-      <p class="price">{{ product.price }}</p>
+  
+  
+  <!-- Exfoliantes Corporales -->
+  <div class="category-section" *ngIf="exfoliantesCorporales.length">
+    <h2>Exfoliantes Corporales</h2>
+    <div class="product-category">
+      <div *ngFor="let product of exfoliantesCorporales" class="product">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <h3>{{product.name}}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{product.price | currency}}</p>
+      </div>
     </div>
   </div>
-
-  <h2>Mascarillas</h2>
-  <div class="product-category">
-    <div class="product" *ngFor="let product of mascarillas">
-      <img [src]="product.img" [alt]="product.name">
-      <h3>{{ product.name }}</h3>
-      <p [innerHTML]="product.description"></p>
-      <p class="price">{{ product.price }}</p>
+  
+  <!-- Mascarillas -->
+  <div class="category-section" *ngIf="mascarillas.length">
+    <h2>Mascarillas</h2>
+    <div class="product-category">
+      <div *ngFor="let product of mascarillas" class="product">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <h3>{{product.name}}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{product.price | currency}}</p>
+      </div>
     </div>
   </div>
-
-  <h2>Tónicos</h2>
-  <div class="product-category">
-    <div class="product" *ngFor="let product of tonicos">
-      <img [src]="product.img" [alt]="product.name">
-      <h3>{{ product.name }}</h3>
-      <p [innerHTML]="product.description"></p>
-      <p class="price">{{ product.price }}</p>
+  
+  <!-- Tónicos -->
+  <div class="category-section" *ngIf="tonicos.length">
+    <h2>Tónicos</h2>
+    <div class="product-category">
+      <div *ngFor="let product of tonicos" class="product">
+        <img [src]="product.imageUrl" alt="{{product.name}}">
+        <h3>{{product.name}}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{product.price | currency}}</p>
+      </div>
     </div>
   </div>
-</section>
+  </section>
+  
+  
+  <!-- <section class="products">
+    <h2>Aceites Corporales</h2>
+    <div class="product-category">
+      <div class="product" *ngFor="let product of aceitesCorporales">
+        <img [src]="product.img" [alt]="product.name">
+        <h3>{{ product.name }}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{ product.price }}</p>
+      </div>
+    </div>
+  
+    <h2>Cremas Corporales</h2>
+    <div class="product-category">
+      <div class="product" *ngFor="let product of cremasCorporales">
+        <img [src]="product.img" [alt]="product.name">
+        <h3>{{ product.name }}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{ product.price }}</p>
+      </div>
+    </div>
+  
+    <h2>Exfoliantes Corporales</h2>
+    <div class="product-category">
+      <div class="product" *ngFor="let product of exfoliantesCorporales">
+        <img [src]="product.img" [alt]="product.name">
+        <h3>{{ product.name }}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{ product.price }}</p>
+      </div>
+    </div>
+  
+    <h2>Mascarillas</h2>
+    <div class="product-category">
+      <div class="product" *ngFor="let product of mascarillas">
+        <img [src]="product.img" [alt]="product.name">
+        <h3>{{ product.name }}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{ product.price }}</p>
+      </div>
+    </div>
+  
+    <h2>Tónicos</h2>
+    <div class="product-category">
+      <div class="product" *ngFor="let product of tonicos">
+        <img [src]="product.img" [alt]="product.name">
+        <h3>{{ product.name }}</h3>
+        <p [innerHTML]="product.description"></p>
+        <p class="price">{{ product.price }}</p>
+      </div>
+    </div>
+  
+    //
+    <div *ngFor="let producto of productos" class="producto-item">
+      <img [src]="producto.img" alt="{{ producto.name }}">
+      <h3>{{ producto.name }}</h3>
+      <p [innerHTML]="producto.description"></p>
+      <span>{{ producto.price }}</span>
+    </div> -->
+  
+  
+  
