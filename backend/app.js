@@ -4,6 +4,7 @@ const cors = require('cors');  // Importa el paquete cors
 const mongoose = require('mongoose');
 const reservationRoutes = require('./routes/spa.routes.js'); 
 var productRoutes = require('./routes/product.routes');
+const serviceRoutes = require('./routes/servicios.routes');
 
 var app = express();//
 
@@ -25,7 +26,9 @@ app.use((req,res,next)=>{
     res.header("Access-Control-Allow-Credentials", true);
     next();
 });
+
 // Usar rutas
 app.use('/api/reservations', reservationRoutes);
 app.use('/', productRoutes);
+app.use('/', serviceRoutes);
 module.exports=app;
