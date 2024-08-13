@@ -12,9 +12,16 @@ export class ReservacionComponent {
   @Input() hora: string = '';
 
   reservationForm: FormGroup;
-  services: string[] =['Masaje Sueco','Masaje Mediterraneo','Masaje con Piedras Volcanicas', 'Bambu terapia','Limpiesa Facial Profunda con Revitalizacion','Tratamiento Piel Madura'
-    ,'Tratamioento de Hiper-Pingmentacion', 'Rejuvenecimiento Facial con RadioFrecuencia'
-   ];
+  services: string[] = [
+    'Masaje Sueco', 'Masaje Mediterraneo', 'Masaje con Piedras Volcanicas',
+    'Bambu terapia', 'Limpieza Facial Profunda con Revitalización',
+    'Tratamiento Piel Madura', 'Tratamiento de Hiper-Pigmentación',
+    'Rejuvenecimiento Facial con RadioFrecuencia'
+  ];
+  availableTimes: string[] = [
+    '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00',
+    '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'
+  ];;
 
   constructor(
     private fb: FormBuilder,
@@ -35,6 +42,19 @@ export class ReservacionComponent {
       time: this.hora
     });
 
+    if (!this.isTimeValid(this.reservationForm.value.time)) {
+      alert('Por favor selecciona una hora válida dentro de los intervalos permitidos.');
+      return;
+    }
+
+    const selectedDateTime = new Date(`${this.reservationForm.value.date}T${this.reservationForm.value.time}`);
+    const currentDateTime = new Date();
+
+    if (selectedDateTime < currentDateTime) {
+      alert('No se puede reservar una fecha u hora anterior al momento actual.');
+      return;
+    }
+
     if (this.reservationForm.valid) {
       console.log('Datos a enviar:', this.reservationForm.value);
       this.reservationService.crearReservacion(this.reservationForm.value).subscribe(
@@ -47,5 +67,13 @@ export class ReservacionComponent {
         }
       );
     }
+  }
+
+  isTimeValid(time: string): boolean {
+    const allowedTimes = [
+      '09:00', '09:30', '10:00', '10:30', '11:00', '11:30', '12:00',
+      '14:00', '14:30', '15:00', '15:30', '16:00', '16:30', '17:00'
+    ];
+    return allowedTimes.includes(time);
   }
 }
