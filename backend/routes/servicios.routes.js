@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-var productController = require('../controllers/services.controller');
+var servicesController = require('../controllers/servicios.controller.js');
 
 router.get('/services', servicesController.getAllServices);
 router.get('/services/category/:category', servicesController.getServicesByCategory);
