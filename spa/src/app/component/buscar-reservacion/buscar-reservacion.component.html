@@ -1,48 +1,48 @@
 <section class="busqueda">
-    <h2>Busca tu cita</h2>
-    <h1>Ingresa el turno que se te asignó</h1>
-    <input type="number" [(ngModel)]="turnoBuscado" placeholder="Ingrese el turno">
-    <button (click)="buscarReservacion()">Buscar</button>
-  </section>
-  
-  <!-- Mostrar los detalles de la reservación si se encuentra -->
-  <div *ngIf="reservacion">
-    <h3>Detalles de la Reservación</h3>
-    <p>Fecha: {{ reservacion.date }}</p>
-    <p>Hora: {{ reservacion.time }}</p>
-    <p>Servicio: {{ reservacion.service }}</p>
-    <p>Cliente: {{ reservacion.clientName }}</p>
-    <p>Email: {{ reservacion.clientEmail }}</p>
-    <p>Turno: {{ reservacion.turno }}</p>
-    <button (click)="mostrarFormularioModificacion()">Modificar Reservación</button>
-    <button (click)="eliminarReservacion()">Eliminar Reservación</button>
-  </div>
-  
-  <!-- Mostrar el formulario de modificación si se solicita -->
-  <div *ngIf="mostrarFormulario">
-    <h3>Modificar Reservación</h3>
-    <form [formGroup]="modificacionForm" (ngSubmit)="onModificar()">
-      <label for="date">Fecha:</label>
-      <input id="date" formControlName="date" type="date">
-  
-      <label for="time">Hora:</label>
-      <input id="time" formControlName="time" type="time">
-  
-      <label for="service">Servicio:</label>
-      <input id="service" formControlName="service">
-  
-      <label for="clientName">Cliente:</label>
-      <input id="clientName" formControlName="clientName">
-  
-      <label for="clientEmail">Email:</label>
-      <input id="clientEmail" formControlName="clientEmail">
-  
-      <button type="submit">Guardar Cambios</button>
-    </form>
-  </div>
-  
-  <!-- Mostrar mensaje de error si ocurre -->
-  <div *ngIf="errorMsg">
-    <p>{{ errorMsg }}</p>
-  </div>
-  
+  <h2>Busca tu cita</h2>
+  <h1>Ingresa el turno que se te asignó</h1>
+  <input type="number" [(ngModel)]="turnoBuscado" placeholder="Ingrese el turno">
+  <button (click)="buscarReservacion()">Buscar</button>
+</section>
+
+<!-- Mostrar los detalles de la reservación si se encuentra -->
+<div *ngIf="reservacion">
+  <h3>Detalles de la Reservación</h3>
+  <p>Fecha: {{ reservacion.date }}</p>
+  <p>Hora: {{ reservacion.time }}</p>
+  <p>Servicio: {{ reservacion.service }}</p>
+  <p>Cliente: {{ reservacion.clientName }}</p>
+  <p>Email: {{ reservacion.clientEmail }}</p>
+  <p>Turno: {{ reservacion.turno }}</p>
+  <button (click)="mostrarFormularioModificacion()">Modificar Reservación</button>
+  <button (click)="eliminarReservacion()">Eliminar Reservación</button>
+</div>
+
+<!-- Mostrar el formulario de modificación si se solicita -->
+<div *ngIf="mostrarFormulario">
+  <h3>Modificar Reservación</h3>
+  <form [formGroup]="modificacionForm" (ngSubmit)="onModificar()">
+    <label for="date">Fecha:</label>
+    <input id="date" formControlName="date" type="date">
+
+    <label for="time">Hora:</label>
+    <select id="time" formControlName="time">
+      <option value="" disabled selected>Selecciona una hora</option>
+      <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
+    </select>
+
+    <label for="service">Servicio:</label>
+    <select id="service" formControlName="service">
+      <option value="" disabled selected>Selecciona un servicio</option>
+      <option *ngFor="let service of services" [value]="service">{{ service }}</option>
+    </select>
+
+    <label for="clientName">Cliente:</label>
+    <input id="clientName" formControlName="clientName">
+
+    <label for="clientEmail">Email:</label>
+    <input id="clientEmail" formControlName="clientEmail">
+
+    <button type="submit">Guardar Cambios</button>
+  </form>
+</div>
