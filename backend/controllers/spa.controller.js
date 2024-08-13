@@ -23,6 +23,15 @@ exports.crearReservacion = async (req, res) => {
   if (!emailRegex.test(clientEmail)) {
     return res.status(400).json({ error: 'Por favor, ingresa un correo electrónico válido.' });
   }
+  // Validar que la fecha no sea anterior a la fecha actual
+  const inputDate = new Date(date);
+  const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
+
+  // Comprobar si la fecha de reserva es anterior a la fecha actual
+  if (inputDate < currentDate) {
+    return res.status(400).json({ error: 'No se pueden hacer reservaciones en una fecha anterior a la actual.' });
+  }
   try {
     // Contar cuántas reservas existen para asignar el turno
     const totalReservas = await Reservas.countDocuments({});
@@ -81,6 +90,15 @@ exports.modificarReservacion = async (req, res) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(clientEmail)) {
       return res.status(400).json({ error: 'Por favor, ingresa un correo electrónico válido.' });
+    }
+    // Validar que la fecha no sea anterior a la fecha actual
+    const inputDate = new Date(date);
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+
+    // Comprobar si la fecha de reserva es anterior a la fecha actual
+    if (inputDate < currentDate) {
+      return res.status(400).json({ error: 'No se pueden hacer reservaciones en una fecha anterior a la actual.' });
     }
     try {
         console.log('Código recibido para modificación:', codigo); // Agregar logs para depurar
