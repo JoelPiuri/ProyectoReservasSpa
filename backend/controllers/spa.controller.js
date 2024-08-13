@@ -18,7 +18,11 @@ exports.verificarDisponibilidad = async (req, res) => {
 // Crear nueva reservación
 exports.crearReservacion = async (req, res) => {
   const { date, time, service, clientName, clientEmail } = req.body;
-  
+  // Validar que el email tenga un formato general válido
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(clientEmail)) {
+    return res.status(400).json({ error: 'Por favor, ingresa un correo electrónico válido.' });
+  }
   try {
     // Contar cuántas reservas existen para asignar el turno
     const totalReservas = await Reservas.countDocuments({});
@@ -73,7 +77,11 @@ exports.buscarReservacion = async (req, res) => {
 exports.modificarReservacion = async (req, res) => {
     const codigo = req.params.codigo;
     const { date, time, service, clientName, clientEmail } = req.body;
-
+    // Validar que el email tenga un formato general válido
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(clientEmail)) {
+      return res.status(400).json({ error: 'Por favor, ingresa un correo electrónico válido.' });
+    }
     try {
         console.log('Código recibido para modificación:', codigo); // Agregar logs para depurar
         console.log('Datos recibidos:', req.body);
