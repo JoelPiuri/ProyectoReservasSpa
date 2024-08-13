@@ -17,6 +17,10 @@
       </div>
     </div>
   </div>
+  <div *ngIf="!aceitesCorporales.length">
+    <h2>Aceites Corporales</h2>
+    <p>No hay productos disponibles.</p>
+  </div>
   
   <div class="category-section" *ngIf="cremasCorporales.length">
     <h2>Cremas Corporales</h2>
@@ -29,7 +33,10 @@
       </div>
     </div>
   </div>
-  
+  <div *ngIf="!cremasCorporales.length">
+    <h2>Cremas Corporales</h2>
+    <p>No hay productos disponibles.</p>
+  </div>
   
   <!-- Exfoliantes Corporales -->
   <div class="category-section" *ngIf="exfoliantesCorporales.length">
@@ -42,6 +49,10 @@
         <p class="price">{{product.price | currency}}</p>
       </div>
     </div>
+  </div>
+  <div *ngIf="!exfoliantesCorporales.length">
+    <h2>Exfoliantes Corporales</h2>
+    <p>No hay productos disponibles.</p>
   </div>
   
   <!-- Mascarillas -->
@@ -56,6 +67,10 @@
       </div>
     </div>
   </div>
+  <div *ngIf="!mascarillas.length">
+    <h2>Mascarillas</h2>
+    <p>No hay productos disponibles.</p>
+  </div>
   
   <!-- Tónicos -->
   <div class="category-section" *ngIf="tonicos.length">
@@ -69,10 +84,12 @@
       </div>
     </div>
   </div>
-  
-  <div *ngIf="!services.length">
+  <div *ngIf="!tonicos.length">
+    <h2>Tónicos</h2>
     <p>No hay productos disponibles.</p>
   </div>
+  
+  
   </section>
   
   
