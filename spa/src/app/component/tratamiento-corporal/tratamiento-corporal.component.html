@@ -12,11 +12,11 @@
   <div *ngIf="services.length">
     <div *ngFor="let service of services" class="massage-card">
       <img [src]="service.imageUrl" alt="{{ service.name }}">
-      <h3>{{ service.name }} --- {{ service.duration }} mins--- {{ service.price | currency }}</h3>
+      <h3>{{ service.name }} <br>--- {{ service.duration }} mins ---<br> {{ service.price | currency }}</h3>
       <p>{{ service.description }}</p>
     </div>
   </div>
   <div *ngIf="!services.length">
-    <p>No hay servicios faciales disponibles.</p>
+    <p>No hay servicios corporales disponibles.</p>
   </div>
 </section>
