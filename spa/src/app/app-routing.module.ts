@@ -10,7 +10,8 @@ import { FaqComponent } from './component/faq/faq.component';
 const routes: Routes = [
   { path: 'inicio', component: InicioComponent },
   {
-    path: 'servicios', component: ServiciosComponent, children: [
+    path: 'servicios', component: ServiciosComponent
+    , children: [
       { path: 'tratamiento-facial', component: TratamientoFacialComponent },
       { path: 'tratamiento-corporal', component: TratamientoCorporalComponent }
     ]
