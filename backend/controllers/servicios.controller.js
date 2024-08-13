@@ -1,4 +1,4 @@
-var Product = require('../models/servicios');
+var Service = require('../models/servicios');
 
 // Obtener todos los servicios
 exports.getAllServices = async (req, res) => {
@@ -22,16 +22,15 @@ exports.getServicesByCategory = async (req, res) => {
 
 // Crear un nuevo servicio
 exports.createService = async (req, res) => {
-  var { name, description, price, category } = req.body;
-  var service = new Service({ name, description, price, category });
-
   try {
+    var service = new Service(req.body);
     var newService = await service.save();
     res.status(201).json(newService);
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).json({ error: error.message });
   }
 };
+
 
 // Actualizar un servicio
 exports.updateService = async (req, res) => {

@@ -1,4 +1,4 @@
-<!-- Banner Flotante -->
+<!-- Banner Flotante
 <div class="floating-banner" *ngIf="isBannerVisible" (click)="onBannerClick()">
   <span class="close-btn" (click)="closeBanner($event)">&times;</span>
   <div class="floating-banner-content">
@@ -12,6 +12,20 @@
         <h3>{{ treatment.title }} --- {{ treatment.duration }} --- {{ treatment.price }}</h3>
         <p>{{ treatment.description }}</p>
       </div>
+    </div>
+  </section>
+   -->
+
+   <section class="facial-treatments">
+    <div *ngIf="services.length">
+      <div *ngFor="let service of services" class="treatment-card">
+        <img [src]="service.imageUrl" alt="{{ service.name }}">
+        <h3>{{ service.name }} --- {{ service.price | currency }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    </div>
+    <div *ngIf="!services.length">
+      <p>No hay servicios faciales disponibles.</p>
     </div>
   </section>
   

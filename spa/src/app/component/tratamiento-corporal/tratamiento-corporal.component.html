@@ -1,18 +1,22 @@
-<!-- Banner Flotante -->
+<!-- Banner Flotante
 <div class="floating-banner" *ngIf="isBannerVisible" (click)="onBannerClick()">
   <span class="close-btn" (click)="closeBanner($event)">&times;</span>
   <div class="floating-banner-content">
     <h1>.</h1>
   </div>
-</div>
+</div> -->
 
 <section class="massage-services">
-    <div class="massage-card" *ngFor="let massage of massages">
-      <img [src]="massage.img" [alt]="massage.title">
-      <div class="massage-info">
-        <h3>{{ massage.title }} --- {{ massage.duration }} --- {{ massage.price }}</h3>
-        <p>{{ massage.description }}</p>
-      </div>
+  <div *ngIf="services.length">
+    <div *ngFor="let service of services" class="massage-card">
+      <img [src]="service.imageUrl" alt="{{ service.name }}">
+      <h3>{{ service.name }} --- {{ service.price | currency }}</h3>
+      <p>{{ service.description }}</p>
     </div>
-  </section>
+  </div>
+  <div *ngIf="!services.length">
+    <p>No hay servicios faciales disponibles.</p>
+  </div>
+</section>
+
   
