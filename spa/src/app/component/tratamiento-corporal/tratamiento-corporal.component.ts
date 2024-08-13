@@ -1,13 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiciosService } from '../../services/servicios.service';
 
-// interface Massage {
-//   img: string;
-//   title: string;
-//   description: string;
-//   duration: string;
-//   price: string;
-// }
 
 @Component({
   selector: 'app-tratamiento-corporal',

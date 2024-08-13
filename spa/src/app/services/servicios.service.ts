@@ -7,6 +7,7 @@ interface Servicios {
   description: string;
   price: number;
   imageUrl: string;
+  duration: number;
   category: string;
 }
 

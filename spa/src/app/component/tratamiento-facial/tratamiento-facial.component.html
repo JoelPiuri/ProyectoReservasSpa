@@ -9,8 +9,8 @@
   <section class="facial-treatments">
     <div *ngIf="services.length">
       <div *ngFor="let service of services" class="treatment-card">
-        <img [src]="service.imageUrl" alt="{{ service.name }}">
-        <h3>{{ service.name }} --- {{ service.price | currency }}</h3>
+        <img [src]="service.imageUrl" alt="{{ service.name }}" >
+        <h3>{{ service.name }} --- {{ service.duration }} mins --- {{ service.price | currency }}</h3>
         <p>{{ service.description }}</p>
       </div>
     </div>
@@ -19,3 +19,5 @@
     </div>
   </section>
   
+
+   
