@@ -30,6 +30,17 @@ export class TratamientoCorporalComponent implements OnInit {
       error => console.error('Error fetching corporal services', error)
     );
   }
+  isBannerVisible: boolean = true;
+
+  closeBanner(event: Event): void {
+    event.stopPropagation(); // Evita que el clic en la "X" active el clic en el banner
+    this.isBannerVisible = false;
+  }
+
+  onBannerClick(): void {
+    const url = 'https://es.shein.com/'; // Aquí define la URL a la que quieres redirigir
+    window.location.href = url;
+  }
 }
 // export class TratamientoCorporalComponent {
 //   massages: Massage[] = [
@@ -63,15 +74,4 @@ export class TratamientoCorporalComponent implements OnInit {
 //     // }
 //   ];
 
-//   isBannerVisible: boolean = true;
-
-//   closeBanner(event: Event): void {
-//     event.stopPropagation(); // Evita que el clic en la "X" active el clic en el banner
-//     this.isBannerVisible = false;
-//   }
-
-//   onBannerClick(): void {
-//     const url = 'https://es.shein.com/'; // Aquí define la URL a la que quieres redirigir
-//     window.location.href = url;
-//   }
 // }
