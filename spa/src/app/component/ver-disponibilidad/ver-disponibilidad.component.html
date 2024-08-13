@@ -8,7 +8,7 @@
 </form>
 
 <div *ngIf="disponible === true" class="message success">
-  <p>¡Sí, prepárate porque tendrás una cita con nosotros!</p>
+  
   <app-reservacion [fecha]="disponibilidadForm.value.date" [hora]="disponibilidadForm.value.time"></app-reservacion>
 </div>
 
