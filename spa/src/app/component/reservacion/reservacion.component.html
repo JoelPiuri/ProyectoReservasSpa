@@ -1,9 +1,14 @@
 <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
-    <input type="date" formControlName="date" />
-    <input type="time" formControlName="time" />
-      <input type="text" formControlName="clientName" placeholder="Tu Nombre">
-      <input type="email" formControlName="clientEmail" placeholder="Tu Correo Electrónico">
-      <input type="text" formControlName="service" placeholder="Servicio">
-      <button type="submit">Reservar</button>
-    </form>
-    
+  <input type="date" formControlName="date" />
+  <input type="time" formControlName="time" />
+  <input type="text" formControlName="clientName" placeholder="Tu Nombre">
+  <input type="email" formControlName="clientEmail" placeholder="Tu Correo Electrónico">
+
+  <!-- Cambia el input por un select -->
+  <select formControlName="service">
+    <option value="" disabled selected>Selecciona un servicio</option>
+    <option *ngFor="let service of services" [value]="service">{{service}}</option>
+  </select>
+
+  <button type="submit">Reservar</button>
+</form>

@@ -12,6 +12,9 @@ export class ReservacionComponent {
   @Input() hora: string = '';
 
   reservationForm: FormGroup;
+  services: string[] =['Masaje Sueco','Masaje Mediterraneo','Masaje con Piedras Volcanicas', 'Bambu terapia','Limpiesa Facial Profunda con Revitalizacion','Tratamiento Piel Madura'
+    ,'Tratamioento de Hiper-Pingmentacion', 'Rejuvenecimiento Facial con RadioFrecuencia'
+   ];
 
   constructor(
     private fb: FormBuilder,
