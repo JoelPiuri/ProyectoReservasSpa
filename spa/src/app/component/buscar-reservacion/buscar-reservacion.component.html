@@ -1,12 +1,14 @@
 <section class="busqueda">
   <h2>Busca tu cita</h2>
   <h1>Ingresa el código que se te asignó</h1>
-  <input type="text" [(ngModel)]="codigoAsignado" maxlength="8" pattern="[A-Za-z0-9]{5,6}">
-  <button (click)="buscarReservacion()">Buscar</button>
+  <div class="busqueda-input">
+    <input type="text" [(ngModel)]="codigoAsignado" maxlength="8" pattern="[A-Za-z0-9]{5,6}">
+    <button (click)="buscarReservacion()">Buscar</button>
+  </div>
 </section>
 
 <!-- Mostrar los detalles de la reservación si se encuentra -->
-<div *ngIf="reservacion">
+<div *ngIf="reservacion" class="reservation-details">
   <h3>Detalles de la Reservación</h3>
   <p>Fecha: {{ reservacion.date }}</p>
   <p>Hora: {{ reservacion.time }}</p>
@@ -15,19 +17,21 @@
   <p>Email: {{ reservacion.clientEmail }}</p>
   <p>Turno: {{ reservacion.turno }}</p>
   <p>Código: {{ reservacion.codigo }}</p>
-  <button (click)="mostrarFormularioModificacion()">Modificar Reservación</button>
-  <button (click)="eliminarReservacion()">Eliminar Reservación</button>
+  
+  <div class="reservation-buttons">
+    <button (click)="mostrarFormularioModificacion()">Modificar Reservación</button>
+    <button (click)="eliminarReservacion()">Eliminar Reservación</button>
+  </div>
 </div>
 
 <!-- Mostrar el formulario de modificación si se solicita -->
-<div *ngIf="mostrarFormulario">
+<div *ngIf="mostrarFormulario" class="modification-form">
   <h3>Modificar Reservación</h3>
   <form [formGroup]="modificacionForm" (ngSubmit)="onModificar()">
     <label for="date">Fecha:</label>
     <input id="date" formControlName="date" type="date">
 
     <label for="time">Hora:</label>
-
     <select id="time" formControlName="time">
       <option value="" disabled selected>Selecciona una hora</option>
       <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
@@ -50,6 +54,6 @@
 </div>
 
 <!-- Mostrar mensaje de error si ocurre -->
-<div *ngIf="errorMsg">
+<div *ngIf="errorMsg" class="error-msg">
   <p>{{ errorMsg }}</p>
 </div>

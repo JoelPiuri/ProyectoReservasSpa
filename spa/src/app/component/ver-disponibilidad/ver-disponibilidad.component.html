@@ -1,18 +1,18 @@
-<form [formGroup]="disponibilidadForm" (ngSubmit)="verificarDisponibilidad()">
-  <input type="date" formControlName="date">
-  <select formControlName="time">
+<form [formGroup]="disponibilidadForm" (ngSubmit)="verificarDisponibilidad()" class="availability-form">
+  <input type="date" formControlName="date" class="input-date">
+  <select formControlName="time" class="input-select">
     <option value="" disabled selected>Selecciona una hora</option>
     <option *ngFor="let time of availableTimes" [value]="time">{{ time }}</option>
   </select>
-  <button type="submit">¿Estamos disponibles?</button>
+  <button type="submit" class="submit-button">¿Estamos disponibles?</button>
 </form>
 
-<div *ngIf="disponible === true">
-  <p>¡Sí, prepárate porque tendrás una cita con nosotros!</p>
-  <!-- En ver-disponibilidad.component.html -->
+<div *ngIf="disponible === true" class="message success">
+  
   <app-reservacion [fecha]="disponibilidadForm.value.date" [hora]="disponibilidadForm.value.time"></app-reservacion>
 </div>
 
-<div *ngIf="disponible === false">
+<div *ngIf="disponible === false" class="message error">
   <p>Lo siento, la fecha y hora no están disponibles.</p>
 </div>
+

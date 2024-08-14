@@ -1,0 +1,54 @@
+.availability-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .input-date,
+  .input-select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: auto;
+    background-color: #d5a0d6;
+    color: #4a154b;
+  }
+  
+  .input-select option {
+    background-color: #a0465d;
+  }
+  
+  .submit-button {
+    background-color: #6b3677;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #4a154b;
+  }
+  
+  .message {
+    font-size: 18px;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  .message.success {
+    background-color: #d5a0d6;
+    color: #4a154b;
+    border: 2px solid #4a154b;
+  }
+  
+  .message.error {
+    background-color: #b7469c;
+    color: white;
+    border: 2px solid #6b3677;
+  }
+  

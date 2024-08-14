@@ -4,8 +4,8 @@ const cors = require('cors');  // Importa el paquete cors
 const mongoose = require('mongoose');
 
 const reservationRoutes = require('./routes/spa.routes.js'); 
-var productRoutes = require('./routes/product.routes');
-const serviceRoutes = require('./routes/servicios.routes');
+var productRoutes = require('./routes/product.routes.js');
+const serviceRoutes = require('./routes/servicios.routes.js');
 const faqRoutes = require('./routes/faq.routes.js');
 
 var app = express();//
@@ -15,6 +15,12 @@ app.use(express.static('public'));
 
 // Habilita CORS para todas las solicitudes
 app.use(cors());
+
+mongoose.connect('mongodb://localhost:27017/Spa', {
+    // otras opciones de mongoose si es necesario
+  })
+  .then(() => console.log('Conectado a la base de datos Spa'))
+  .catch(err => console.error('Error al conectar a la base de datos', err));
 
 app.use(express.json());
 
