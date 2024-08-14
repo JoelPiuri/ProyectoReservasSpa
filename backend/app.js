@@ -16,11 +16,6 @@ app.use(express.static('public'));
 // Habilita CORS para todas las solicitudes
 app.use(cors());
 
-mongoose.connect('mongodb://localhost:27017/Spa', {
-    // otras opciones de mongoose si es necesario
-  })
-  .then(() => console.log('Conectado a la base de datos Spa'))
-  .catch(err => console.error('Error al conectar a la base de datos', err));
 
 app.use(express.json());
 
