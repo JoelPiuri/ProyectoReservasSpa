@@ -1,12 +1,19 @@
 <div class="faq-section">
-  <h2>Preguntas Frecuentes</h2>
+  <h2 class="faq-title">Preguntas Frecuentes</h2>
   <div *ngFor="let faq of faqs" class="faq-item">
-    <h3 (click)="toggleAnswer(faq)">
+    <h3 class="faq-question" (click)="toggleAnswer(faq)">
       {{ faq.question }}
     </h3>
-    <p *ngIf="faq.active">
+    <p *ngIf="faq.active" class="faq-answer">
       {{ faq.answer }}
     </p>
   </div>
   
 
+<!-- Banner Flotante -->
+<div class="floating-banner" *ngIf="isBannerVisible" (click)="onBannerClick()">
+  <span class="close-btn" (click)="closeBanner($event)">&times;</span>
+  <div class="floating-banner-content">
+    <h1>.</h1>
+  </div>
+</div>

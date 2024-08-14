@@ -15,7 +15,9 @@ app.use(express.static('public'));
 
 // Habilita CORS para todas las solicitudes
 app.use(cors());
+
 app.use(express.json());
+
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use((req,res,next)=>{
@@ -28,8 +30,8 @@ app.use((req,res,next)=>{
 });
 
 // Usar rutas
-app.use('/api/reservacion', reservationRoutes);
-app.use('/', faqRoutes);
+app.use('/api/reservas', reservationRoutes);
+app.use('/api/faqs', faqRoutes);
 app.use('/', productRoutes);
 app.use('/', serviceRoutes);
 

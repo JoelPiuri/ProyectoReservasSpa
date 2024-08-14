@@ -11,7 +11,7 @@ interface FAQ {
   providedIn: 'root'
 })
 export class FaqService {
-  private apiUrl = 'http://localhost:3600/faqs';
+  private apiUrl = 'http://localhost:3600';
 
   constructor(private http: HttpClient) {}
 
