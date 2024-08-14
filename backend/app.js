@@ -28,7 +28,7 @@ app.use((req,res,next)=>{
 });
 
 // Usar rutas
-app.use('/', reservationRoutes);
+app.use('/api/reservacion', reservationRoutes);
 app.use('/', faqRoutes);
 app.use('/', productRoutes);
 app.use('/', serviceRoutes);

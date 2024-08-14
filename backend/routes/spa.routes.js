@@ -9,12 +9,12 @@ router.post('/verificar-disponibilidad', spaController.verificarDisponibilidad);
 router.post('/reserve', spaController.crearReservacion);
 
 //Ruta para la busqueda de una reservación
-router.get('/buscar/:turno', spaController.buscarReservacion);
+router.get('/buscar/:codigo', spaController.buscarReservacion);
 
 //Ruta para modificar la reservación
-router.put('/modificar/:turno', spaController.modificarReservacion);
+router.put('/modificar/:codigo', spaController.modificarReservacion);
 
 //Ruta para eliminar reservación
-router.delete('/eliminar/:turno', spaController.eliminarReservacion);
+router.delete('/eliminar/:codigo', spaController.eliminarReservacion);
 
 module.exports = router;
