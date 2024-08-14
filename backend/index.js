@@ -12,3 +12,4 @@ mongoose.connect('mongodb://localhost:27017/spa', {
         console.log(`Servidor corriendo en localhost:${port}`);
     });
 }).catch(err => console.log("Error al conectar a la base de datos:", err));
+

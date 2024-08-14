@@ -8,17 +8,14 @@ var productRoutes = require('./routes/product.routes.js');
 const serviceRoutes = require('./routes/servicios.routes.js');
 const faqRoutes = require('./routes/faq.routes.js');
 
-var app = express();//
+var app = express();
 
 // Sirve los archivos estáticos desde la carpeta 'public'
 app.use(express.static('public'));
 
 // Habilita CORS para todas las solicitudes
 app.use(cors());
-
-
 app.use(express.json());
-
 app.use(bodyParser.urlencoded({extended:false}));
 
 app.use((req,res,next)=>{
@@ -31,12 +28,9 @@ app.use((req,res,next)=>{
 });
 
 // Usar rutas
-app.use('/api/reservations', reservationRoutes);
-app.use('/api/faqs', faqRoutes);
+app.use('/', reservationRoutes);
+app.use('/', faqRoutes);
 app.use('/', productRoutes);
 app.use('/', serviceRoutes);
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 module.exports=app;

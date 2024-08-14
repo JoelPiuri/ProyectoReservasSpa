@@ -1,7 +1,7 @@
 /*Contenido*/
 .hero {
   position: relative;
-  background-image: url("http://localhost:5000/images/spainicio.jpg");
+  background-image: url("http://localhost:3600/images/spainicio.jpg");
   background-size: cover;
   background-position: center;
   height: 60vh; /* Ajusta la altura según tus necesidades */
